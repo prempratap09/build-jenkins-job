@@ -25,7 +25,7 @@ JOB_PATH = mandatory_arg(sys.argv[4])
 JOB_PARAMS = sys.argv[5] or '{}'
 
 # create/connect jenkins server
-server = jenkins.Jenkins(f"http://{JENKINS_URL}", username=JENKINS_USER, password=JENKINS_TOKEN)
+server = jenkins.Jenkins(f"https://{JENKINS_URL}", username=JENKINS_USER, password=JENKINS_TOKEN)
 user = server.get_whoami()
 version = server.get_version()
 print(f"Hello {user['fullName']} from Jenkins {version}")
